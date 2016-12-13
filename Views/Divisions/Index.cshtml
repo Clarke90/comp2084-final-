@@ -1,0 +1,34 @@
+﻿@model IEnumerable<FinalExam.Division>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>NHL Divisions</h2>
+
+<p>
+ <!-- removed action link ( create new )-->
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <!-- removed display for action link-->
+            @Html.ActionLink(item.Name, "Details", "Divisions")
+         
+        </td>
+        <td>
+           <!-- old view bag removed links-->
+        </td>
+    </tr>
+}
+
+</table>
